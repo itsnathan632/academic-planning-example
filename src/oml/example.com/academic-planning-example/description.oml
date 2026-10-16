@@ -1,0 +1,41 @@
+
+@dc:title "Academic Planning Consumer Example"
+@dc:description "An independent academic-planning model using the published methodology."
+description <https://example.com/academic-planning-example/description#> as example {
+    uses <http://purl.org/dc/elements/1.1/> as dc
+    uses <http://www.example.com/method/vocabulary#> as method
+
+    instance Math150 : method:Course [
+        method:courseCode "MATH 150"
+        method:title "Precalculus"
+        method:creditHours 3
+    ]
+
+    instance Cis120 : method:Course [
+        method:courseCode "CIS 120"
+        method:title "Introduction to Programming"
+        method:creditHours 3
+    ]
+
+    instance Cis220 : method:Course [
+        method:courseCode "CIS 220"
+        method:title "Data Structures"
+        method:creditHours 3
+        method:hasPrerequisite Cis120
+    ]
+
+    instance Cis310 : method:Course [
+        method:courseCode "CIS 310"
+        method:title "Database Systems"
+        method:creditHours 3
+        method:hasPrerequisite Cis220
+    ]
+
+    instance Fall2026Plan : method:AcademicPlan [
+        method:catalogYear 2026
+        method:plansCourse Math150
+        method:plansCourse Cis120
+        method:plansCourse Cis220
+        method:plansCourse Cis310
+    ]
+}

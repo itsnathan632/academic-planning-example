@@ -1,0 +1,14 @@
+@dc:title "Academic Plans Created Through Markdown"
+@dc:description "Academic plans maintained using the published methodology editor template."
+description <https://example.com/academic-planning-example/plans#> as plans {
+    uses <http://purl.org/dc/elements/1.1/> as dc
+    uses <http://www.example.com/method/vocabulary#> as method
+    extends <https://example.com/academic-planning-example/description#> as courses
+    uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+
+    @rdfs:label "Spring 2027 Academic Plan"
+    instance Spring2027Plan : method:AcademicPlan [
+        method:catalogYear 2027
+        method:plansCourse courses:Cis220
+    ]
+}
